@@ -1,0 +1,23 @@
+model:
+  model: openai/gpt-6-luna
+  args:
+    client_timeout: 300
+    max_retries: 0 # Inspect retries, below
+    responses_api: true
+    responses_store: false
+  config:
+    max_retries: 5
+    max_tokens: 16384
+    reasoning_effort: medium
+    reasoning_summary: none
+    response_schema:
+      name: chess_intervention_action
+      strict: true
+      json_schema:
+        type: object
+        required: [action]
+        additionalProperties: false
+        properties:
+          action: { type: string, enum: [continue_play, use_expert_move] }
+eval_config:
+  max_samples: 10

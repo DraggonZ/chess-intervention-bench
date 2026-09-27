@@ -1,0 +1,334 @@
+{
+  "dataset": {
+    "candidates": 400,
+    "qualifying": 182,
+    "episodes": 100,
+    "unassisted": {
+      "wins": 0,
+      "draws": 64,
+      "losses": 36
+    },
+    "eligible_turns": 3211,
+    "turns_per_episode": 32.11,
+    "changed_move_share": 0.3441,
+    "helpful_share": 0.0866,
+    "harmful_share": 0.005,
+    "helpful_share_of_changed": 0.2516
+  },
+  "common_episodes": 100,
+  "scores": {
+    "Never intervene": {
+      "mean": 0.32,
+      "mean_ci": [
+        0.27,
+        0.365
+      ],
+      "vs_random": -0.0429,
+      "vs_random_ci": [
+        -0.0531,
+        -0.0341
+      ],
+      "captured": 0.0,
+      "captured_ci": [
+        0.0,
+        0.0
+      ]
+    },
+    "Random timing": {
+      "mean": 0.3629,
+      "mean_ci": [
+        0.3168,
+        0.4069
+      ],
+      "vs_random": 0.0,
+      "vs_random_ci": [
+        0.0,
+        0.0
+      ],
+      "captured": 0.0803,
+      "captured_ci": [
+        0.0648,
+        0.0975
+      ]
+    },
+    "Fixed move 30": {
+      "mean": 0.39,
+      "mean_ci": [
+        0.3399,
+        0.44
+      ],
+      "vs_random": 0.0271,
+      "vs_random_ci": [
+        -0.0044,
+        0.0595
+      ],
+      "captured": 0.1308,
+      "captured_ci": [
+        0.0741,
+        0.1942
+      ]
+    },
+    "First disagreement (uses Expert)": {
+      "mean": 0.495,
+      "mean_ci": [
+        0.435,
+        0.555
+      ],
+      "vs_random": 0.1321,
+      "vs_random_ci": [
+        0.0742,
+        0.1915
+      ],
+      "captured": 0.3271,
+      "captured_ci": [
+        0.2136,
+        0.4404
+      ]
+    },
+    "Random disagreement (uses Expert)": {
+      "mean": 0.4517,
+      "mean_ci": [
+        0.4076,
+        0.4941
+      ],
+      "vs_random": 0.0888,
+      "vs_random_ci": [
+        0.072,
+        0.1074
+      ],
+      "captured": 0.2462,
+      "captured_ci": [
+        0.2031,
+        0.2918
+      ]
+    },
+    "Best in hindsight": {
+      "mean": 0.855,
+      "mean_ci": [
+        0.805,
+        0.9
+      ],
+      "vs_random": 0.4921,
+      "vs_random_ci": [
+        0.4719,
+        0.5148
+      ],
+      "captured": 1.0,
+      "captured_ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "openai/gpt-6-luna": {
+      "mean": 0.375,
+      "mean_ci": [
+        0.325,
+        0.4201
+      ],
+      "vs_random": 0.0121,
+      "vs_random_ci": [
+        -0.0182,
+        0.0462
+      ],
+      "captured": 0.1028,
+      "captured_ci": [
+        0.0446,
+        0.1714
+      ]
+    },
+    "openrouter/openai/gpt-oss-120b": {
+      "mean": 0.375,
+      "mean_ci": [
+        0.32,
+        0.43
+      ],
+      "vs_random": 0.0121,
+      "vs_random_ci": [
+        -0.0261,
+        0.0517
+      ],
+      "captured": 0.1028,
+      "captured_ci": [
+        0.0283,
+        0.1818
+      ]
+    },
+    "openrouter/qwen/qwen3-30b-a3b-instruct-2507": {
+      "mean": 0.38,
+      "mean_ci": [
+        0.325,
+        0.43
+      ],
+      "vs_random": 0.0171,
+      "vs_random_ci": [
+        -0.0194,
+        0.0563
+      ],
+      "captured": 0.1121,
+      "captured_ci": [
+        0.0377,
+        0.1869
+      ]
+    },
+    "openrouter/google/gemma-4-31b-it": {
+      "mean": 0.35,
+      "mean_ci": [
+        0.3,
+        0.395
+      ],
+      "vs_random": -0.0129,
+      "vs_random_ci": [
+        -0.0396,
+        0.0177
+      ],
+      "captured": 0.0561,
+      "captured_ci": [
+        0.0,
+        0.1193
+      ]
+    },
+    "typesafe/jev-1.13.0": {
+      "mean": 0.33,
+      "mean_ci": [
+        0.28,
+        0.38
+      ],
+      "vs_random": -0.0329,
+      "vs_random_ci": [
+        -0.0483,
+        -0.0153
+      ],
+      "captured": 0.0187,
+      "captured_ci": [
+        0.0,
+        0.0481
+      ]
+    }
+  },
+  "behaviour": {
+    "luna": {
+      "episodes": 100,
+      "intervened": 100,
+      "median_move": 22.0,
+      "unchanged": 0.7,
+      "random_unchanged": 0.6554,
+      "helpful": 0.12,
+      "random_helpful": 0.087
+    },
+    "gpt-oss": {
+      "episodes": 100,
+      "intervened": 98,
+      "median_move": 22.0,
+      "unchanged": 0.602,
+      "random_unchanged": 0.6554,
+      "helpful": 0.1429,
+      "random_helpful": 0.087
+    },
+    "qwen": {
+      "episodes": 100,
+      "intervened": 100,
+      "median_move": 18.0,
+      "unchanged": 0.64,
+      "random_unchanged": 0.6554,
+      "helpful": 0.13,
+      "random_helpful": 0.087
+    },
+    "gemma": {
+      "episodes": 100,
+      "intervened": 99,
+      "median_move": 25,
+      "unchanged": 0.7071,
+      "random_unchanged": 0.6554,
+      "helpful": 0.0808,
+      "random_helpful": 0.087
+    },
+    "jev": {
+      "episodes": 100,
+      "intervened": 71,
+      "median_move": 29,
+      "unchanged": 0.8169,
+      "random_unchanged": 0.6554,
+      "helpful": 0.0282,
+      "random_helpful": 0.087
+    }
+  },
+  "power": {
+    "luna": {
+      "sd": 0.1658,
+      "detectable": 0.0465,
+      "episodes_for_effect": 50
+    },
+    "gpt-oss": {
+      "sd": 0.1958,
+      "detectable": 0.0548,
+      "episodes_for_effect": 69
+    },
+    "qwen": {
+      "sd": 0.2012,
+      "detectable": 0.0564,
+      "episodes_for_effect": 73
+    },
+    "gemma": {
+      "sd": 0.1384,
+      "detectable": 0.0388,
+      "episodes_for_effect": 35
+    },
+    "jev": {
+      "sd": 0.0839,
+      "detectable": 0.0235,
+      "episodes_for_effect": 13
+    }
+  },
+  "power_effect": 0.066,
+  "usage": {
+    "GPT-6 Luna": {
+      "errors": 0,
+      "input_tokens": 415906,
+      "output_tokens": 705736,
+      "cost": 0.3945
+    },
+    "gpt-oss-120b": {
+      "errors": 0,
+      "input_tokens": 439851,
+      "output_tokens": 2102337,
+      "cost": 1.3274
+    },
+    "Qwen3 30B A3B": {
+      "errors": 0,
+      "input_tokens": 81297,
+      "output_tokens": 963,
+      "cost": 0.0111
+    },
+    "Gemma 4 31B": {
+      "errors": 0,
+      "input_tokens": 843492,
+      "output_tokens": 1581769,
+      "cost": 0.6011
+    },
+    "Jev 1.13": {
+      "errors": 0,
+      "input_tokens": 2205901,
+      "output_tokens": 72874,
+      "cost": 0.0926
+    },
+    "GPT-6 Luna (repeats)": {
+      "errors": 0,
+      "input_tokens": 1230035,
+      "output_tokens": 2076911,
+      "cost": 1.1615
+    }
+  },
+  "repeats": {
+    "luna": {
+      "model": "openai/gpt-6-luna",
+      "epochs": 3,
+      "episodes": 100,
+      "mean_score_by_epoch": [
+        0.39,
+        0.37,
+        0.365
+      ],
+      "same_turn_every_epoch": 0.07
+    }
+  }
+}

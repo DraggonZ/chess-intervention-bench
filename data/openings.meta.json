@@ -1,0 +1,14 @@
+{
+  "source_file": "lichess_elite_2020-05.pgn",
+  "source_sha256": "474ac9c2528b5f9b1875052c714d4c13d0f506c57a84819ee441d15c5a0bdeda",
+  "standard_games": 369772,
+  "games_tried": 327,
+  "seed": 42,
+  "cut_moves": [
+    15,
+    20
+  ],
+  "balance_depth": 18,
+  "max_balance_cp": 150,
+  "engine": "Stockfish 17.1"
+}

@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.hypothesis/
+.ruff_cache/
+build/
+engines/
+*.log
+.env
+.env.*
+!.env.example
+logs/

@@ -1,0 +1,30 @@
+model:
+  model: openrouter/openai/gpt-oss-120b
+  args:
+    client_timeout: 300
+    max_retries: 0 # Inspect retries, below
+    provider: # pin one host so reruns use the same serving stack
+      only: [deepinfra/turbo]
+      allow_fallbacks: false
+      require_parameters: true
+      max_price: { prompt: 0.15, completion: 0.6 }
+  config:
+    max_retries: 5
+    max_tokens: 16384
+    temperature: 1
+    seed: 42
+    extra_body:
+      reasoning: { effort: medium, exclude: true }
+      response_format:
+        type: json_schema
+        json_schema:
+          name: chess_intervention_action
+          strict: true
+          schema:
+            type: object
+            required: [action]
+            additionalProperties: false
+            properties:
+              action: { type: string, enum: [continue_play, use_expert_move] }
+eval_config:
+  max_samples: 10

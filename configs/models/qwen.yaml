@@ -1,0 +1,19 @@
+model:
+  model: openrouter/qwen/qwen3-30b-a3b-instruct-2507
+  args:
+    client_timeout: 300
+    max_retries: 0 # Inspect retries, below
+    provider: # pin one host so reruns use the same serving stack
+      only: [alibaba]
+      allow_fallbacks: false
+      require_parameters: true
+      max_price: { prompt: 0.13, completion: 0.52 }
+  config:
+    max_retries: 5
+    max_tokens: 1024
+    temperature: 1
+    seed: 42
+    extra_body:
+      response_format: { type: json_object } # this route has no JSON schema mode
+eval_config:
+  max_samples: 10

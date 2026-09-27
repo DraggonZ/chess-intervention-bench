@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chess-intervention"
+version = "1.0.0"
+description = "Can an LLM tell when one deeper engine move would change a chess game? An Inspect benchmark and its null result."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12"
+dependencies = [
+    "chess==1.11.2",
+    "httpx==0.28.1",
+    "inspect-ai==0.3.263",
+    "matplotlib>=3.10",
+    "numpy>=2.3",
+    "openai==3.8.0",
+    "pyyaml==6.0.3",
+]
+
+[project.entry-points.inspect_ai]
+chess_intervention = "chess_intervention._registry"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.uv]
+required-version = ">=0.11.3"
+exclude-newer = "2026-09-06T00:00:00Z"
+exclude-newer-package = { hypothesis = false }
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B", "UP"]
+
+[dependency-groups]
+dev = [
+    "hypothesis==6.168.0",
+    "ruff==0.16.6",
+]

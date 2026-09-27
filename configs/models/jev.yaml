@@ -1,0 +1,7 @@
+# Jev answers a native choice question; see src/chess_intervention/typesafe.py.
+model:
+  model: typesafe/jev-1.13.0
+  config:
+    max_retries: 5
+eval_config:
+  max_samples: 10
