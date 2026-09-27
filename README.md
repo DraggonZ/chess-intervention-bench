@@ -1,10 +1,8 @@
 # Chess Intervention Benchmark
 
-**Can a language model tell when a chess game needs help?**
+**Can a language model tell when a chess player should think harder?**
 
-Two equal chess engines play. Before each of one side's moves, a language model
-decides whether to spend its single token, which swaps that one move for a move
-from a deeper search. The model is scored on the game's final result.
+Two equal chess engines play. Once per game, a language model may tell one side to think longer about its next move: that move is searched to depth 18 instead of 12. The model never sees a move or an evaluation, only the game so far. It is scored on the game's final result.
 
 **No model beat choosing the moment at random.** The analysis below explains why:
 the benchmark mostly rewards predicting where a deeper engine search would pick a
