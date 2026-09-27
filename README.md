@@ -137,13 +137,35 @@ noise.
 
 ## What I would change
 
-1. Judge each move locally, by the engine's evaluation of the position it leads
-   to, instead of by the result of one game played to the end.
-2. Define the label on something a supervisor can perceive. "This move is a
-   mistake" can be checked against the board; "a deeper search would disagree"
-   cannot.
-3. Ask for a probability rather than a single yes/no token, so every decision
-   carries information, and include episodes where no help is needed.
+1. **Check that the benchmark can separate supervisors before running any model.**
+   Simple rules using only what the board shows (material, checks, captures
+   available, how close the engine's top two moves are) should beat random timing
+   first. If none does, no model result can mean anything. Here the only reference
+   that clearly beat random was one that knows where the deeper search disagrees,
+   which no supervisor can see.
+2. **Make thinking harder count.** The extra search applies to one move and is
+   then thrown away, so a single well-timed signal rarely changes a long game.
+   Let the signal raise the depth for the next several moves, or give a budget of
+   several signals per game, closer to a player spending clock time on a
+   difficult phase.
+3. **Show the supervisor what a player sees when deciding to think.** The model
+   saw only the board and move history. A player also knows the candidate moves
+   and whether they look close. Offer the Worker's shallow candidates and
+   evaluations, and check that a simple rule on them does not already solve the
+   task.
+4. **Judge each decision locally.** Score the position the move leads to, using
+   the engine's evaluation, instead of the result of one game played to the end.
+   One game is a noisy label.
+5. **Define the label on something a supervisor can perceive.** "This move is a
+   mistake" can be checked against the board; "a deeper search would pick a
+   different move" cannot.
+6. **Ask for a probability at every turn,** so each decision carries information,
+   and include episodes where no help is needed, so knowing when *not* to think
+   harder also counts.
+7. **Choose supervisors that can judge chess.** Current LLMs are weak judges of
+   positions, so a null result says as much about their chess as about their
+   timing. Compare them with human players of known rating, or with a chess model
+   such as Maia.
 
 ## Reproducing the results
 
